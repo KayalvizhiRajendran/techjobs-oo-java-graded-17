@@ -45,6 +45,40 @@ public class Job {
         return Objects.hashCode(id);
     }
 
+    @Override
+    public String toString() {
+        String jobDetails = System.lineSeparator();
+        jobDetails += "ID: "+ this.id+System.lineSeparator();
+        if(this.name != null && !this.name.isEmpty()) {
+            jobDetails += "Name: " + this.name + System.lineSeparator();
+        }else {
+            jobDetails += "Name: Data not available" + System.lineSeparator();
+        }
+        if(this.employer !=null && !this.employer.toString().isEmpty()){
+            jobDetails += "Employer: "+ this.employer.toString()+System.lineSeparator();
+        }else {
+            jobDetails += "Employer: Data not available"+System.lineSeparator();
+        }
+        if(this.location != null && !this.location.toString().isEmpty()){
+            jobDetails += "Location: "+ this.location.toString()+System.lineSeparator();
+        }else{
+            jobDetails += "Location: Data not available"+System.lineSeparator();
+        }
+        if(this.positionType != null && !this.positionType.toString().isEmpty()){
+            jobDetails += "Position Type: "+ this.positionType.toString()+System.lineSeparator();
+        }else{
+            jobDetails += "Position Type: Data not available"+System.lineSeparator();
+        }
+        if(this.coreCompetency != null && !this.coreCompetency.toString().isEmpty()){
+            jobDetails += "Core Competency: "+ this.coreCompetency.toString()+System.lineSeparator();
+        }else{
+            jobDetails += "Core Competency: Data not available"+System.lineSeparator();
+        }
+
+        return jobDetails;
+
+    }
+
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
     public int getId() {
